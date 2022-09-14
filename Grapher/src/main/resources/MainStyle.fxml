@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import org.gillius.jfxutils.chart.*?>
+
+<Group xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.vidimka.ScreenController">
+    <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="900.0">
+            <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#onHelpButtonClick" text="Help" />
+                <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#onButtonClick" text="Resize" />
+            </ToolBar>
+        </AnchorPane>
+      <AnchorPane fx:id="mainPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="900.0">
+          <SplitPane dividerPositions="0.9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="362.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <AnchorPane fx:id="chartPane" minHeight="0.0" minWidth="0.0" prefHeight="295" prefWidth="598.0">
+                  <LineChart fx:id="lineChart" layoutX="-24.0" layoutY="-76.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <xAxis>
+                          <StableTicksAxis label="X" lowerBound="-10" upperBound="10" fx:id="xAxis" />
+                      </xAxis>
+                      <yAxis>
+                          <StableTicksAxis fx:id="yAxis" label="Y" lowerBound="-10" upperBound="10" />
+                      </yAxis>
+                  </LineChart>
+                  <Rectangle fx:id="rect" fill="DODGERBLUE" mouseTransparent="true" opacity="0.3" stroke="#002966" strokeType="INSIDE" strokeWidth="3.0" StackPane.alignment="TOP_LEFT" />
+              </AnchorPane>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="598.0">
+                  <TextField fx:id="textField" layoutY="1.0" onKeyPressed="#onKeyPress" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="430.0" AnchorPane.topAnchor="0.0" />
+              </AnchorPane>
+          </SplitPane>
+      </AnchorPane>
+    </VBox>
+</Group>
